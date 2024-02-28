@@ -8,6 +8,11 @@ const imgThumbnail = document.getElementById("imgThumbnail")
 const lightboxNext = document.querySelector(".lightbox__next")
 const lightboxPrev = document.querySelector(".lightbox__prev")
 
+const lightboxRef = document.querySelector(".lightbox__ref")
+const lightboxCat = document.querySelector(".lightbox__cat")
+
+const lightboxBlackBg = document.querySelector(".lightbox__box")
+
 // console.log(fullscreen_array)
 
 // inicialize la variable global afficher lightbox
@@ -19,9 +24,11 @@ fullscreen_array.forEach((full_btn, i) => {
 		checkLighBox()
 		// console.log(imgThumbnail.src)
 		arrayIndex = i
-		imgThumbnail.src = photosArray[arrayIndex].imageUrl
+		updateDom(arrayIndex)
 	})
 })
+
+/*  EVENT LISTENERS   */
 
 //rachouter an event listener
 lightboxClose.addEventListener("click", () => {
@@ -37,8 +44,36 @@ lightboxPrev.addEventListener("click", () => {
 	removeImageIndex()
 })
 
-/*    fuctions     */
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click", (e) => {
+	if (
+		e.target == lightboxBlackBg ||
+		e.target.className === "lightbox__container" ||
+		e.target.className === "lightbox"
+	) {
+		lightbox.style.display = "none"
+		console.log("afuera !!!")
+	}
+})
 
+// keyboard navigation
+window.addEventListener("keydown", (e) => {
+	// if the "esc" key is pressed
+	if (showLightBox && e.code === "Escape") {
+		lightbox.style.display = "none"
+		showLightBox = false
+		return
+	}
+	if (showLightBox && e.code === "ArrowRight") {
+		return addImageIndex()
+	}
+	if (showLightBox && e.code === "ArrowLeft") {
+		return removeImageIndex()
+	}
+})
+
+/*    fuctions     */
+// open or closes the lightbox
 function checkLighBox() {
 	if (showLightBox) {
 		lightbox.style.display = "none"
@@ -49,21 +84,30 @@ function checkLighBox() {
 	}
 }
 
+// updates the index value according to the selected pic
 function addImageIndex() {
 	if (arrayIndex === photosArray.length - 1) {
 		arrayIndex = 0
 	} else {
 		arrayIndex = arrayIndex + 1
 	}
-	imgThumbnail.src = photosArray[arrayIndex].imageUrl
+	updateDom(arrayIndex)
 }
 
+// updates the index value according to the selected pic
 function removeImageIndex() {
 	if (arrayIndex == 0) {
 		arrayIndex = photosArray.length - 1
 	} else {
 		arrayIndex = arrayIndex - 1
 	}
-	console.log(arrayIndex)
-	imgThumbnail.src = photosArray[arrayIndex].imageUrl
+	// console.log(arrayIndex)
+	updateDom(arrayIndex)
+}
+
+// updates the DOM based on the changes of its index array
+function updateDom(passedIndex) {
+	imgThumbnail.src = photosArray[passedIndex].imageUrl
+	lightboxRef.textContent = photosArray[passedIndex].reference
+	lightboxCat.textContent = photosArray[passedIndex].category
 }
