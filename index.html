@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>lightbox test</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Lightbox</h1>
+		</header>
+		<main>
+			<article>
+				<h2>This is a lightbox test created of an array of images</h2>
+				<div class="filter">
+					<!-- 
+					<div class="card">
+						<img
+							class="post_img"
+							src="http://localhost:10034/wp-content/uploads/2024/01/nathalie-0-1568x1045.jpeg"
+							alt=""
+							data-imgid="bf2385"
+						/>
+
+						<img
+							class="fullscreen"
+							src="http://localhost:10034/wp-content/themes/twentytwentyone_child/assets/Icon_fullscreen.png"
+							alt="logo"
+							role="button"
+							aria-pressed="false"
+						/>
+						<img
+							class="lightbox-eye"
+							alt="lightbox eye"
+							role="button"
+							aria-pressed="false"
+							src="http://localhost:10034/wp-content/themes/twentytwentyone_child/assets/Icon_eye.png"
+						/>
+						<span class="title"> Santé ! </span>
+						<span class="categorie">array(0) { } </span>
+					</div>
+                    -->
+				</div>
+			</article>
+		</main>
+		<footer class="entry-footer default-max-width">
+			<h2>Footer</h2>
+		</footer>
+		<div class="lightbox">
+			<div class="lightbox__box">
+				<button class="lightbox__close">Fermer</button>
+				<button class="lightbox__next">
+					Suivant
+					<img src="./assets/arrow-right.svg" alt="next arrow" />
+				</button>
+				<button class="lightbox__prev">
+					<img src="./assets/arrow-left.svg" alt="next arrow" />
+					Précédent
+				</button>
+				<div class="lightbox__container">
+					<img src="./assets/image-icon.png" alt="image thumbnail" />
+					<div class="lightbox__info">
+						<p class="lightbox__ref">light-ref</p>
+						<p class="lightbox__cat">light-cat</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./photos.js"></script>
+	<script src="./script.js"></script>
+	<script src="./lighthouse.js"></script>
+</html>

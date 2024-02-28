@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	color: #2c2b2b;
+	padding: 15px;
+	min-height: 75vh;
+}
+
+main {
+	min-height: 88vh;
+}
+
+h2 {
+	margin-bottom: 2em;
+}
+
+.filter {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.filter .card {
+	border: 1px;
+	position: relative;
+}
+
+.filter .card::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #00000099;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.filter .card img {
+	width: 380px;
+	height: 285px;
+	object-fit: cover;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+.filter .card .fullscreen {
+	position: absolute;
+	top: 10px;
+	right: 17px;
+	width: 34px;
+	height: 34px;
+	z-index: 10;
+	cursor: pointer;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.filter .card .lightbox-eye {
+	position: absolute;
+	z-index: 10;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 46px;
+	height: 31.204px;
+	cursor: pointer;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.filter .card .title,
+.filter .card .categorie {
+	position: absolute;
+	bottom: 10px;
+	color: white;
+	z-index: 10;
+	font-size: 14px;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.filter .card:hover .fullscreen,
+.filter .card:hover .lightbox-eye,
+.filter .card:hover::after,
+.filter .card:hover .title,
+.filter .card:hover .categorie {
+	opacity: 1;
+}
+
+.filter .card .title {
+	left: 17px;
+}
+
+.filter .card .categorie {
+	right: 17px;
+}
+
+/*  lightbox */
+
+.lightbox {
+	position: fixed;
+	display: none;
+	/* display: flex; */
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 20;
+	justify-content: center;
+	align-items: center;
+}
+.lightbox__box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	max-width: 620px;
+}
+
+.lightbox__next {
+	border: none;
+	width: 90px;
+	top: calc(50% + 10px);
+	right: -40px;
+	position: absolute;
+	z-index: 21;
+	cursor: pointer;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+}
+
+.lightbox__prev {
+	border: none;
+	width: 90px;
+	top: calc(50% + 10px);
+	left: -40px;
+	position: absolute;
+	z-index: 21;
+	cursor: pointer;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+}
+
+.lightbox__close {
+	border: none;
+	background: url(./assets/x-circle.svg);
+	background-position: center;
+	text-indent: -3000px;
+	width: 22.02px;
+	height: 22.02px;
+	cursor: pointer;
+	z-index: 21;
+	position: absolute;
+	top: 16%;
+	right: 10px;
+}
+
+.lightbox__container {
+	display: flex;
+	height: 100vh;
+	margin-right: 50px;
+	margin-left: 50px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.lightbox__container img {
+	width: 564px;
+	height: 495px;
+	object-fit: contain;
+}
+
+.lightbox__info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 564px;
+	margin-top: 19px;
+}
+
+p.lightbox__ref {
+	color: white;
+}
+
+p.lightbox__cat {
+	color: white;
+}
