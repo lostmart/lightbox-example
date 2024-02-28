@@ -1,7 +1,6 @@
 const filterCont = document.querySelector(".filter")
 
 photosArray.forEach((img) => {
-	console.log(img)
 	filterCont.innerHTML += `
         <div class="card">
             <img
