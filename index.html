@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>lightbox test</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<header>
-			<h1>Lightbox</h1>
-		</header>
-		<main>
-			<article>
-				<h2>This is a lightbox test created of an array of images</h2>
-				<div class="filter">
-					<!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lightbox test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lightbox</h1>
+    </header>
+    <main>
+      <article>
+        <h2>This is a lightbox test created of an array of images</h2>
+        <div class="filter">
+          <!-- 
 					<div class="card">
 						<img
 							class="post_img"
@@ -41,38 +41,38 @@
 						<span class="categorie">array(0) { } </span>
 					</div>
                     -->
-				</div>
-			</article>
-		</main>
-		<footer class="entry-footer default-max-width">
-			<h2>Footer</h2>
-		</footer>
-		<div class="lightbox">
-			<div class="lightbox__box">
-				<button class="lightbox__close">Fermer</button>
-				<button class="lightbox__next">
-					Suivant
-					<img src="./assets/arrow-right.svg" alt="next arrow" />
-				</button>
-				<button class="lightbox__prev">
-					<img src="./assets/arrow-left.svg" alt="next arrow" />
-					Précédent
-				</button>
-				<div class="lightbox__container">
-					<img
-						src="./assets/image-icon.png"
-						alt="image thumbnail"
-						id="imgThumbnail"
-					/>
-					<div class="lightbox__info">
-						<p class="lightbox__ref">light-ref</p>
-						<p class="lightbox__cat">light-cat</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script src="./photos.js"></script>
-	<script src="./script.js"></script>
-	<script src="./lighthouse.js"></script>
+        </div>
+      </article>
+    </main>
+    <footer class="entry-footer default-max-width">
+      <h2>Footer</h2>
+    </footer>
+    <div class="lightbox">
+      <div class="lightbox__box">
+        <button class="lightbox__close">Close</button>
+        <button class="lightbox__next">
+          Next
+          <img src="./assets/arrow-right.svg" alt="next arrow" />
+        </button>
+        <button class="lightbox__prev">
+          <img src="./assets/arrow-left.svg" alt="next arrow" />
+          Previous
+        </button>
+        <div class="lightbox__container">
+          <img
+            src="./assets/image-icon.png"
+            alt="image thumbnail"
+            id="imgThumbnail"
+          />
+          <div class="lightbox__info">
+            <p class="lightbox__ref">light-ref</p>
+            <p class="lightbox__cat">light-cat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./photos.js"></script>
+  <script src="./script.js"></script>
+  <script src="./lighthouse.js"></script>
 </html>
