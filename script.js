@@ -2,11 +2,11 @@ const filterCont = document.querySelector(".filter")
 
 photosArray.forEach((img) => {
 	filterCont.innerHTML += `
-        <div class="card">
+        <div class="card" tabindex="0" aria-label="${img.title} - ${img.category}">
             <img
                 class="post_img"
                 src="${img.imageUrl}"
-                alt="example photo"
+                alt="${img.title}"
             />
 
             <img
@@ -15,13 +15,6 @@ photosArray.forEach((img) => {
                 alt="logo"
                 role="button"
                 aria-pressed="false"
-            />
-            <img
-                class="lightbox-eye"
-                alt="lightbox eye"
-                role="button"
-                aria-pressed="false"
-                src="./assets/eye.svg"
             />
             <span class="title">${img.title}</span>
             <span class="categorie">${img.category}</span>

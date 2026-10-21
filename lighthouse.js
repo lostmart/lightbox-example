@@ -19,12 +19,26 @@ const lightboxBlackBg = document.querySelector(".lightbox__box")
 let showLightBox = false
 let arrayIndex = null
 
+const cards_array = document.querySelectorAll(".card")
+
 fullscreen_array.forEach((full_btn, i) => {
 	full_btn.addEventListener("click", () => {
 		checkLighBox()
 		// console.log(imgThumbnail.src)
 		arrayIndex = i
 		updateDom(arrayIndex)
+	})
+})
+
+// open lightbox when pressing Enter or Space on a focused card
+cards_array.forEach((card, i) => {
+	card.addEventListener("keydown", (e) => {
+		if (e.code === "Enter" || e.code === "Space") {
+			e.preventDefault()
+			arrayIndex = i
+			updateDom(arrayIndex)
+			checkLighBox()
+		}
 	})
 })
 
