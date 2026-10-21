@@ -71,9 +71,10 @@ footer {
 
 .filter .card .fullscreen {
   position: absolute;
-  top: 10px;
-  right: 17px;
+  top: 38%;
+  right: 50%;
   width: 34px;
+  transform: translate(50%, 50%);
   height: 34px;
   z-index: 10;
   cursor: pointer;
